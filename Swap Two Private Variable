@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+class jaman {
+private:
+    int k;
+    int h;
+
+public:
+    jaman(int a, int i) : k(a), h(i) {}
+
+    // Public member function to swap the private members
+    void j1() {
+        int r= k;
+        k = h;
+        h = r;
+    }
+
+    // Public member functions to get the private members
+    int j2() const {
+        return k;
+    }
+
+    int j3() const {
+        return h;
+    }
+};
+
+int main() {
+    jaman obj(5, 10);
+
+    std::cout << "Before Swap: k = " << obj.j2() << ", h = " << obj.j3() << std::endl;
+
+    obj.j1();
+
+    std::cout << "After Swap: k = " << obj.j2() << ", h = " << obj.j3() << std::endl;
+
+    return 0;
+}
